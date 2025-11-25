@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
+/* ------------------ BASE THEME ------------------ */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #131010;
+      --foreground: #ededed;
+    }
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ------------------ UTILITIES ------------------ */
+@layer utilities {
+
+  /* ---------- Marquee Animation ---------- */
+  @keyframes marqueeMove {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marqueeMove 55s linear infinite;
+    will-change: transform;
+  }
+
+  /* ---------- Background Color Shift ---------- */
+  @keyframes bgShift {
+    0%   { background-color: #89a9df; }
+    33%  { background-color: #a2cfff; }
+    66%  { background-color: #d0b7ff; }
+    100% { background-color: #89a9df; }
+  }
+
+  .animate-bgShift {
+    animation: bgShift 12s ease-in-out infinite;
+  }
+
+  /* ---------- Menu Slide Down Animation ---------- */
+  @keyframes menuSlideDown {
+    0%   { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-menuDown {
+    animation: menuSlideDown 0.35s ease-out forwards;
+  }
+
+  /* ---------- Menu Slide Up (closing) ---------- */
+  @keyframes menuSlideUp {
+    0%   { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+  }
+
+  .animate-menuUp {
+    animation: menuSlideUp 0.35s ease-in forwards;
+  }
+.bg-dots {
+  background-image: radial-gradient(#D8D8D8 1px, transparent 1px);
+  background-size: 18px 18px;
 }
+/* -------------------------------------------------------
+   ✨ Animated Sparkle Dots Background (GREYPIXEL Style)
+-------------------------------------------------------- */
+
+.bg-sparkle {
+  position: relative;
+  overflow: hidden;
+}
+
+/* The grid container */
+.bg-sparkle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  /* dot grid */
+  background-image: radial-gradient(#7bb7e7 1px, transparent 1px);
+  background-size: 22px 22px;
+
+  /* Slight opacity so it's soft */
+  opacity: 0.8;
+}
+
+/* individual sparkles layer */
+.bg-sparkle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: radial-gradient(#a8d8ff 1px, transparent 1px);
+  background-size: 22px 22px;
+
+  animation: sparkle 3s infinite ease-in-out;
+  opacity: 0.4;
+}
+
+/* sparkle animation: fade in → fade out */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.6; }
+}
+/* Scroll Snap Utility */
+.scroll-snap-y {
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-snap-start {
+  scroll-snap-align: start;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 15s linear infinite;
+}
+
+
+}
+
