@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export default function ProjectsShowcase() {
@@ -53,10 +54,10 @@ export default function ProjectsShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full min-h-screen pt-0 mt-10">
+    <section ref={sectionRef} className="w-full min-h-screen pt-0 mt-0 bg-gray-100">
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 pt-20 pb-24 px-10">
         {/* LEFT PANEL — FIXED DURING SCROLL */}
-        <div ref={leftRef} className="flex flex-col bg-white">
+        <div ref={leftRef} className="flex flex-col">
           <p className="text-[15px] text-black/50 font-bold mb-4 flex items-center gap-2">
             <span className="text-xl">+</span> Selected Work
           </p>
@@ -74,9 +75,11 @@ export default function ProjectsShowcase() {
             <div className="flex-1 h-0.5 bg-black" />
             <div className="relative inline-block group cursor-pointer">
               <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
+              <Link href="work">
               <button className="relative z-10 bg-white text-black/80 border border-black px-2 py-2 text-lg font-bold transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                 View All Projects
               </button>
+              </Link>
             </div>
           </div>
         </div>

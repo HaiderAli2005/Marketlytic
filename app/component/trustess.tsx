@@ -17,76 +17,27 @@ export default function TrusteesSection() {
         </p>
 
         {/* LOGO SCROLLER WRAPPER */}
-        <div className="overflow-hidden relative border  border-l-[3px] border-l-black
-        border-b-[3px] border-b-black
-        border-r border-r-black/60
-        border-t border-t-black/60 py-10 my-20">
+        <div className="overflow-hidden relative border border-l-[3px] border-l-black border-b-[3px] border-b-black border-r border-r-black/60 border-t border-t-black/60 py-10 my-20">
+          
           {/* SCROLLING CONTAINER */}
           <div className="flex whitespace-nowrap animate-scroll-left">
-            {/* Duplicate the row twice to enable infinite loop */}
+            
+            {/* First Set of Logos */}
             <div className="flex space-x-6 px-6">
-              {/* Logo 1 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 1" src="/logo-1.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
-
-              {/* Logo 2 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 2" src="/logo-2.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
-
-              {/* Logo 3 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 3" src="/logo-3.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
-
-              {/* Logo 4 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 4" src="/logo-4.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
-
-              {/* Logo 5 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 5" src="/logo-5.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
-
-              {/* Logo 6 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 6" src="/logo-6.png" className="h-auto max-h-40 max-w-40object-contain" />
-              </div>
+              {['logo-1', 'logo-2', 'logo-3', 'logo-4', 'logo-5', 'logo-6'].map((logo, index) => (
+                <div key={index} className="relative z-10 text-shadow-black bg-white border border-black px-3 py-3 transition-all duration-300">
+                  <img title={`Logo ${index + 1}`} src={`/${logo}.png`} className="h-auto max-h-30 max-w-50 object-contain" />
+                </div>
+              ))}
             </div>
 
-            {/* Second Row of Logos for Infinite Loop */}
+            {/* Second Set of Logos (for seamless loop) */}
             <div className="flex space-x-6 px-6">
-              {/* Logo 1 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 1" src="/logo-1.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
-
-              {/* Logo 2 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 2" src="/logo-2.png" className="h-auto max-h-40 max-w-40object-contain" />
-              </div>
-
-              {/* Logo 3 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 3" src="/logo-3.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
-
-              {/* Logo 4 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 4" src="/logo-4.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
-
-              {/* Logo 5 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 5" src="/logo-5.png" className="h-auto max-h-40 max-w-40object-contain" />
-              </div>
-
-              {/* Logo 6 */}
-              <div className="relative z-10 bg-white border border-black px-4 py-4 transition-all duration-300">
-                <img title="Logo 6" src="/logo-6.png" className="h-auto max-h-40 max-w-40 object-contain" />
-              </div>
+              {['logo-1', 'logo-2', 'logo-3', 'logo-4', 'logo-5', 'logo-6'].map((logo, index) => (
+                <div key={index} className="relative z-10 bg-white border border-black px-3 py-3 transition-all duration-300">
+                  <img title={`Logo ${index + 1}`} src={`/${logo}.png`} className="h-auto max-h-30 max-w-50 object-contain" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

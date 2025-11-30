@@ -7,11 +7,12 @@
   :root {
     --background: #ffffff;
     --foreground: #171717;
+    
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #131010;
+      --background: #ffffff;
       --foreground: #ededed;
     }
   }
@@ -41,10 +42,10 @@
 
   /* ---------- Background Color Shift ---------- */
   @keyframes bgShift {
-    0%   { background-color: #89a9df; }
-    33%  { background-color: #a2cfff; }
-    66%  { background-color: #d0b7ff; }
-    100% { background-color: #89a9df; }
+    0%   { background-color: #1C9AD7; }
+    33%  { background-color: #3274E1; }
+    66%  { background-color: #03C0CC; }
+    100% { background-color: #A881F0; }
   }
 
   .animate-bgShift {
@@ -71,19 +72,17 @@
     animation: menuSlideUp 0.35s ease-in forwards;
   }
 .bg-dots {
-  background-image: radial-gradient(#D8D8D8 1px, transparent 1px);
-  background-size: 18px 18px;
+  background-image: radial-gradient(#D8D8D8 1px, transparent 2px);
+  background-size: 19px 19px;
 }
-/* -------------------------------------------------------
-   ✨ Animated Sparkle Dots Background (GREYPIXEL Style)
--------------------------------------------------------- */
+
 
 .bg-sparkle {
   position: relative;
   overflow: hidden;
 }
 
-/* The grid container */
+
 .bg-sparkle::before {
   content: "";
   position: absolute;
@@ -130,7 +129,9 @@
 .scroll-snap-start {
   scroll-snap-align: start;
 }
-@keyframes scroll-left {
+/* Add this to your globals.css or specific CSS file */
+/* Define the scroll animation */
+@keyframes scrollLeft {
   0% {
     transform: translateX(0);
   }
@@ -140,8 +141,37 @@
 }
 
 .animate-scroll-left {
-  animation: scroll-left 15s linear infinite;
+  display: flex;
+  animation: scrollLeft 20s linear infinite; 
 }
+/* --- DOT GRID BACKGROUND ------------------------------------ */
+.bg-dots-grid {
+
+  
+  background-image: radial-gradient(circle, #c7e4ff 1.2px, transparent 1.2px);
+  background-size: 22px 22px; /* spacing exactly like screenshot */
+  pointer-events: none;
+ 
+}
+
+
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.6);
+  }
+}
+
+
+
+
+
+
 
 
 }

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Press_Start_2P } from "next/font/google";
 import { Inter } from "next/font/google";
+import RemoveExtensionAttributes from "./remove-extension-attrs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
+          <RemoveExtensionAttributes/>
         {children}
       </body>
     </html>
