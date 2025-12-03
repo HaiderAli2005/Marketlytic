@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 const ServicesMain = () => {
   const { scrollY } = useScroll();
 
-  // Base rotation value
+ 
   const rotateVal = useMotionValue(0);
   const prevScroll = useRef(0);
 

@@ -13,7 +13,7 @@ const contact=()=>{
     <ContactPage/>
     <InquirySection/>
     <MapPage/>
-    <Footer/>
+    
     </>
   )
 }

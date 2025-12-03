@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 
 export default function EnterpriseSection() {
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-between gap-4 py- px-6 md:px-30">
+    
+    <section className="w-full h-200 bg-white flex flex-col md:flex-row items-center justify-between gap-4 py-2 px-6 md:px-60 ">
       
  <motion.div
         className="border border-gray-400 
@@ -33,7 +34,10 @@ export default function EnterpriseSection() {
         <img
           src="/aboutImages/enterprise.jpeg"
           alt="First Enterprise Client"
-          className="w-full h-full object-cover border border-gray-400"
+          className="w-full h-full object-cover  border border-black  border-l-[3px] border-l-black
+                 border-b-[3px] border-b-black
+                 border-r border-r-black/60
+                  border-t border-t-black/60"
         />
       </motion.div>
 

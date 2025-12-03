@@ -1,115 +1,85 @@
-import React, { useEffect, useState } from "react";
-import { Instagram, Linkedin, Twitter } from "lucide-react"; 
-import { motion } from "framer-motion";
-import Image from 'next/image';
+"use client";
+
+import Image from "next/image";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
+
 export default function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
-  
-
-  // Scroll reveal effect when the user is near the bottom
-  useEffect(() => {
-    const handleScroll = () => {
-      const footerPosition = document.getElementById("footer");
-      if (footerPosition) {
-        const rect = footerPosition.getBoundingClientRect();
-        if (rect.top <= window.innerHeight) {
-          setIsVisible(true); // Trigger the footer reveal
-        } else {
-          setIsVisible(false);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <footer
-      id="footer"
-      className={`${
-        isVisible ? "transform translate-y-0" : "transform translate-y-20"
-      } transition-all duration-500 ease-in-out relative w-full bg-gray-100 bg-dots  py-30 `}
-    >
-        <div
-        className="
-        max-w-[1600px] mx-auto 
+      className="
+        fixed bottom-0 left-0 w-full
+        bg-white border-t border-black
+        z-0
+        pointer-events-none
         
-       
-        px-10 pt-10 pb-38
       "
-      >
-        {/* Left Section (Description + Links) */}
-        <div className="flex justify-between items-center  ">
-          <div className="flex flex-col space-y-4 ">
-            <p className="text-lg  text-gray-500">
-              With a wealth of experience under our belt, we've crafted stellar designs for fintech, healthtech, SaaS, e-commerce, retail, and real estate industries.
-            </p>
-             <div className="flex-1 border-b-2 border-black ml-1 mb-10"></div>
-            
-          
+    >
+      {/* ✔ Same exact bg-dots + gradient structure as ServicesMain */}
+      <div className="absolute inset-0 bg-dots pointer-events-none">
+       <div className="absolute top-0 left-0 right-0 h-[280px] bg-linear-to-t from-white/95 via-white/90 to-transparent"></div>
 
-          <div
-            className="relative z-10 border border-black bg-white w-45 px-2 py-1  
-              "
-          >
-            
+      </div>
+
+      {/* CONTENT (stays above dots + gradient) */}
+      <div className="relative z-10 max-w-[1600px] mx-auto px-10 py-10">
+        <div className="flex justify-between items-start">
+
+          <div className="flex flex-col space-y-5 w-full mt-22">
+            <p className="text-lg text-gray-500">
+              With a wealth of experience under our belt, we've crafted
+              stellar designs for <br /> fintech, healthtech, SaaS,
+              e-commerce, retail, and real estate industries
+            </p>
+
+            <div className="w-full border-b-2 border-black" />
+
+            <div className="border border-black bg-white px-3 py-1 w-44 mt-8 mb-8 pointer-events-auto">
               <Image
                 src="/footerlogo.png"
-                alt="MARKETlytics Logo"
                 width={180}
-                height={60}
-                className="object-contain"
+                height={160}
+                alt="logo"
               />
-            
-          
+            </div>
+
+            <p className="text-[17px]  text-black/80 mb-10 mt-5 flex gap-10 ">
+              <span className="">Privacy Policy</span>
+              <span>Terms & Condition</span>
+              <span>Built in Framer</span>
+            </p>
+
+            <p className="text-lg font-bold text-gray-700">
+              Designed and developed by @fremix.design
+            </p>
+          </div>
+
+          <div className="flex text-5xl gap-8 text-black mt-70">
+            <Social><Instagram size={26} /></Social>
+            <Social><Linkedin size={26} /></Social>
+            <Social><Twitter size={26} /></Social>
+          </div>
         </div>
-          <div className="group relative inline-block cursor-pointer z-70 ">
-            <div className="flex text-sm font-bold text-gray-700 space-x-10 mt-5 mb-5 ">
-              <p>Privacy Policy </p>
-              <p>Terms & Condition</p>
-              <p>Built in 🏆 Framer</p>
-            </div>
-            </div>
-            <div className="text-sm font-bold text-gray-700 space-x-5">Design and developed by @fremix.design</div>
-           
+
+        <div className="mt-6 py-4">
+          <div className="marquee-track font-bold text-4xl md:text-7xl text-black/30 whitespace-nowrap">
+            Ready to Dive In? <span className="text-black/40">❖</span> Start in Seconds{" "}
+            <span className="text-black/40">✢</span> Ready to Dive In?{" "}
+            <span className="text-black/40">❖</span> Start in Seconds{" "}
+            <span className="text-black/40">✢</span>
           </div>
-
-         
-          <div className="flex flex-col items-center justify-center mt-30">
-            
-            <div className="flex gap-4 text-black">
-                
-              <div className="group relative inline-block cursor-pointer mb-5 ">
-              <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-1 group-hover:translate-y-1"></div>
-
-              <button title="btn" className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                <Instagram size={30} color="currentColor" />
-              </button>
-            </div>
-              <div className="group relative inline-block cursor-pointer mb-5 ">
-              <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-1 group-hover:translate-y-1"></div>
-
-              <button title="btn1" className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                <Linkedin size={30} color="currentColor" />
-              </button>
-            </div>
-              <div className="group relative inline-block cursor-pointer mb-5 ">
-              <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-1 group-hover:translate-y-1"></div>
-
-              <button title="btn1" className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                <Twitter size={30} color="currentColor" />
-              </button>
-            </div>
-            </div>
-            
-          </div>
-        
-
-        {/* Scrolling Text Section */}
-        
         </div>
       </div>
     </footer>
+  );
+}
+
+function Social({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="group relative cursor-pointer pointer-events-auto">
+      <div className="absolute inset-1 bg-black -translate-x-1 translate-y-1"></div>
+      <button className="relative z-10 bg-white border border-black px-3 py-3 transition-all group-hover:translate-x-1 group-hover:-translate-y-1">
+        {children}
+      </button>
+    </div>
   );
 }

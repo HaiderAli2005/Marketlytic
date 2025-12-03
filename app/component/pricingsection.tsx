@@ -22,8 +22,8 @@ const boxVariants = {
 };
 export default function PricingSection() {
   return (
-    <section className="w-full py-5 bg-white">
-      <div className="max-w-6xl mx-10 px-1 ">
+    <section className="w-full py-5 bg-white mb-30">
+      <div className="max-w-6xl mx-10 px-1  ">
         <p
           className="text-[15px] text-black/50
         mb-7 flex items-center gap-2"

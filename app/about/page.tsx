@@ -12,7 +12,7 @@ import OurTeam from "../component/team/team";
 import OurApproach from "../component/team/OurApproach";
 import ACHIEVEMENTS from "../component/team/ACHIEVEMENTS";
 import Header from "../component/header";
-import Footer from "../component/fotter";
+
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
     <OurTeam/>
     <OurApproach/>
     <ACHIEVEMENTS/>
-    <Footer/>
+   
     </>
   );
 }

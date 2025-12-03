@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ExpandedSection() {
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-20">
+    <section className="w-full  bg-white flex flex-col md:flex-row items-center justify-between gap-8 py-2 px-6 md:px-60">
 
       {/* LEFT IMAGE */}
       <motion.div
@@ -17,7 +17,10 @@ export default function ExpandedSection() {
         <img
           src="/aboutImages/expanded.jpeg" // change to your image path
           alt="Our Launch"
-          className="w-full h-full object-cover border border-gray-400"
+          className="w-full h-full object-cover  border border-black  border-l-[3px] border-l-black
+                 border-b-[3px] border-b-black
+                 border-r border-r-black/60
+                  border-t border-t-black/60"
         />
       </motion.div>
 

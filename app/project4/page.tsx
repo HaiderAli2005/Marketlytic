@@ -36,12 +36,12 @@ const Page1 = () => {
   return (
     <>
       <Header />
-      <div className="relative ">
+      <div className="relative bg-white ">
         <div className="absolute inset-0 bg-dots pointer-events-none">
           <div className="absolute bottom-0 left-0 right-0 h-100 bg-linear-to-b from-transparent to-white"></div>
         </div>
 
-        <div className="relative container mx-auto px-6 md:px-12 pt-20 pb-20">
+        <div className="relative container mx-auto px-6 md:px-12 pt-40 pb-25">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 min-h-[250px]">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -66,15 +66,15 @@ const Page1 = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
-                className="text-black/50 text-xl"
+                className="text-black/50 text-lg"
               >
                 Harmony Health App is a mobile application designed to help
-                users manage their physical and mental well-being through
+                users manage their physical<br/> and mental well-being through
                 personalized health plans and daily wellness tracking.
               </motion.p>
             </motion.div>
 
-            <div className="group relative inline-block cursor-pointer mt-80 mr-50">
+            <div className="group relative inline-block cursor-pointer mt-60">
               <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
 
               <button className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
@@ -88,7 +88,7 @@ const Page1 = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mx-auto px-6 md:px-12 py-12"
+        className="mx-auto px-6 md:px-12 py-12 bg-white"
       >
         <div className="container mx-auto px-6 md:px-12 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -118,7 +118,7 @@ const Page1 = () => {
           </p>
         </div>
       </motion.div>
-      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-20">
+      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-20 bg-white">
         {/* LEFT IMAGE */}
         <motion.div
           className="w-full md:w-[450px] h-[400px] md:h-[400px]" // Added height
@@ -159,7 +159,7 @@ const Page1 = () => {
           </p>
         </motion.div>
       </section>
-      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-20">
+      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-20 bg-white">
         <motion.div
           className="border border-gray-400 
                    border-b-4 border-b-black 
@@ -198,7 +198,7 @@ const Page1 = () => {
         </motion.div>
       </section>
       {/* Stats Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-[200px]">
+      <div className="max-w-8xl mx-auto px-10 py-[200px] bg-white">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -259,7 +259,7 @@ const Page1 = () => {
           </div>
         </div>
       </div>
-      <Footer />
+    
     </>
   );
 };

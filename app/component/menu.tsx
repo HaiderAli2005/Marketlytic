@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
+import { CSSProperties } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  // Animation controls for scroll-up header reveal
   const controls = useAnimation();
   let lastScrollY = 0;
 
@@ -16,14 +16,12 @@ export default function Header() {
       const current = window.scrollY;
 
       if (current < lastScrollY) {
-        // scrolling UP → show header
         controls.start({
           y: 0,
           opacity: 1,
           transition: { duration: 0.3, ease: "easeOut" },
         });
       } else {
-        // scrolling DOWN → hide header
         controls.start({
           y: -40,
           opacity: 0,
@@ -42,11 +40,13 @@ export default function Header() {
     <>
       <main className="">
         <header className="fixed top-0 left-0 right-0 z-50">
+
           <motion.div
             animate={controls}
             initial={{ y: 0, opacity: 1 }}
             className="w-full flex items-center justify-between py-8 px-11 md:px-11 "
           >
+            {/* LOGO */}
             <div className="group relative inline-block cursor-pointer z-70">
               <div
                 className="absolute inset-1 -translate-x-1 translate-y-1 bg-black 
@@ -158,13 +158,19 @@ export default function Header() {
             </motion.div>
           )}
         </header>
-    
 
-        <section className="min-h-[calc(100vh-120px)] flex items-center px-8 md:px-10 pt-40">
-          <div className="w-full max-w-[1600px] mx-auto">
-            {/* STREAMING ANIMATION — FIXED FOR FRAMER MOTION 12 */}
+        {/* HERO SECTION */}
+        <section className="min-h-[calc(100vh-120px)] flex items-center px-8 md:px-10 pt-40 relative overflow-hidden z-10">
+
+          <div className="absolute inset-0 bg-dot pointer-events-none -z-10 "   >
+            
+            <div className="absolute bottom-0 left-0 right-0 h-[450px] bg-linear-to-t from-white/95 via-white/90 to-transparent"></div>
+          </div>
+         
+
+          <div className="w-full max-w-[1600px] mx-auto ">
+            {/* STREAMING ANIMATION */}
             <div className="space-y-6">
-              {/* LINE 1 */}
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -188,7 +194,6 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* LINE 2 */}
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -198,7 +203,6 @@ export default function Header() {
                 Guided by Expert Consulting
               </motion.h1>
 
-              {/* PARAGRAPH */}
               <motion.p
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -212,7 +216,6 @@ export default function Header() {
               </motion.p>
             </div>
 
-            {/* CTA + DIVIDER + TESTIMONIAL */}
             <div className="mt-10 flex items-center justify-between">
               <div className="group relative inline-block cursor-pointer">
                 <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>

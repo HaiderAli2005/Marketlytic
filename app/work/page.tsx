@@ -10,7 +10,7 @@ import WorkCard from "../component/work/workcard";
             <Header/>
         <WorkMain/>
         <WorkCard/>
-        <Footer/>
+        
         </div>
         </>
     );

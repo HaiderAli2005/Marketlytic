@@ -20,7 +20,9 @@ const boxVariants = {
 };
 const ACHIEVEMENTS = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-[200px]">
+     <>
+    <section className="bg-white">
+    <div className="max-w-7xl mx-auto px-2 py-[100px] pb-[260px]">
       {/* Achievements Header */}
       <div className="mb-12">
         <p className="text-sm text-gray-500 mb-3 tracking-wide">
@@ -82,7 +84,12 @@ const ACHIEVEMENTS = () => {
           </button>
         </div>
       </div>
+      
     </div>
+    
+ </section>
+   </>
+    
   );
 };
 

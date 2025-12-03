@@ -23,7 +23,7 @@ const Services = () => {
       <Illusion_Beyond />
       <div className="border border-[#787878] mx-6 md:mx-12" />
       <Numbers_So_Far />
-      <Footer/>
+      
     </section>
   );
 };

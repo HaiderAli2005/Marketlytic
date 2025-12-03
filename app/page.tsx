@@ -10,8 +10,7 @@ import ProjectsShowcase from "./component/projectShowcase";
 import TestimonialsSection from "./component/TestimonialsSection";
 import PricingSection from "./component/pricingsection";
 import FAQSection from "./component/helpdesk";
-import Footer from "./component/fotter";
-import Header from "./component/header";
+
 
 const pixelFont = Press_Start_2P({
   subsets: ["latin"],
@@ -29,7 +28,7 @@ export default function Home() {
       <TrusteesSection />
       <PricingSection />
       <FAQSection />
-      <Footer />
+    
     </main>
   );
 }

@@ -54,10 +54,10 @@ export default function ProjectsShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full min-h-screen pt-0 mt-0 bg-gray-100">
+    <section ref={sectionRef} className="w-full min-h-screen pt-0 mt-0 bg-gray-100 ">
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 pt-20 pb-24 px-10">
         {/* LEFT PANEL — FIXED DURING SCROLL */}
-        <div ref={leftRef} className="flex flex-col">
+        <div ref={leftRef} className="flex flex-col ">
           <p className="text-[15px] text-black/50 font-bold mb-4 flex items-center gap-2">
             <span className="text-xl">+</span> Selected Work
           </p>

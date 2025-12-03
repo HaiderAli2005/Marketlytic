@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function FoundedSection() {
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-20">
+    <section className="w-full bg-white flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-60 ">
       
    <motion.div
         className="border border-gray-400 
@@ -30,12 +30,15 @@ export default function FoundedSection() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true }}
-        className="w-full md:w-[450px] h-[350px]"   // ← Added fixed height
+        className="w-full md:w-[450px] h-[350px]"   
       >
         <img
           src="/aboutImages/stairs.jpeg"
           alt="Founded Marketlytics"
-          className="w-full h-full object-cover border border-gray-400"
+          className="w-full h-full object-cover  border border-black  border-l-[3px] border-l-black
+                 border-b-[3px] border-b-black
+                 border-r border-r-black/60
+                  border-t border-t-black/60"
         />
       </motion.div>
 

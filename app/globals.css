@@ -36,7 +36,7 @@
   .marquee-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: marqueeMove 55s linear infinite;
+    animation: marqueeMove 50s linear infinite;
     will-change: transform;
   }
 
@@ -72,9 +72,75 @@
     animation: menuSlideUp 0.35s ease-in forwards;
   }
 .bg-dots {
-  background-image: radial-gradient(#D8D8D8 1px, transparent 2px);
-  background-size: 19px 19px;
+  background-image: radial-gradient(#E0E0E0 1px, transparent 3px);
+  background-size: 22px 20px;
 }
+
+/* BASE DOT GRID */
+.bg-dot {
+  position: relative;
+  background-image: radial-gradient(#0b76b9 1px, transparent 2px);
+  background-size: 22px 20px;
+  opacity: 0.45;
+}
+
+/* LAYER 1 - dim dots + slow sparkle */
+.bg-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#d2e8ff 1px, transparent 1px);
+  background-size: 22px 20px;
+  opacity: 0.15; 
+  animation: sparkle1 2.2s infinite ease-in-out;
+  animation-delay: calc(var(--delay1) * 1s);
+  mix-blend-mode: screen;
+}
+
+/* LAYER 2 - random bright pops */
+.bg-dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#ffffff 1.2px, transparent 1.2px);
+  background-size: 22px 20px;
+  opacity: 0.1;
+  animation: sparkle2 1.4s infinite ease-in-out;
+  animation-delay: calc(var(--delay2) * 1s);
+  mix-blend-mode: screen;
+}
+
+/* LAYER 3 - quick micro sparkle */
+.bg-dot > .sparkle-layer {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#b3d6ff 1px, transparent 1px);
+  background-size: 22px 20px;
+  opacity: 0.12;
+  animation: sparkle3 0.9s infinite ease-in-out;
+  animation-delay: calc(var(--delay3) * 1s);
+  mix-blend-mode: screen;
+}
+
+/* ANIMATIONS */
+@keyframes sparkle1 {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.25; }
+  100% { opacity: 0.1; }
+}
+
+@keyframes sparkle2 {
+  0% { opacity: 0.05; }
+  60% { opacity: 0.5; }
+  100% { opacity: 0.05; }
+}
+
+@keyframes sparkle3 {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.75; }
+  100% { opacity: 0.1; }
+}
+
 
 
 .bg-sparkle {

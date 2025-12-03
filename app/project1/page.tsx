@@ -35,12 +35,12 @@ const Page1 = () => {
   return (
     <>
       <Header />
-      <div className="relative ">
+      <div className="relative bg-white ">
         <div className="absolute inset-0 bg-dots pointer-events-none">
           <div className="absolute bottom-0 left-0 right-0 h-100 bg-linear-to-b from-transparent to-white"></div>
         </div>
 
-        <div className="relative container mx-auto px-6 md:px-12 pt-20 pb-20">
+        <div className="relative container mx-auto px-6 md:px-12 pt-40 pb-25">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 min-h-[250px]">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -65,15 +65,15 @@ const Page1 = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
-                className="text-black/50 text-xl"
+                className="text-black/50 text-lg"
               >
                 Chat wit Documents, Images, Media and more! Need a quicker way
-                to extract the highlights from any content? Skimming AI is here
+                to<br/> extract the highlights from any content? Skimming AI is here
                 to help you!
               </motion.p>
             </motion.div>
 
-            <div className="group relative inline-block cursor-pointer mt-80 mr-50">
+            <div className="group relative inline-block cursor-pointer mt-60 ">
               <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
 
               <button className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
@@ -87,7 +87,7 @@ const Page1 = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mx-auto px-6 md:px-12 py-12"
+        className="mx-auto px-6 md:px-12 py-12 bg-white"
       >
         <div className="container mx-auto px-6 md:px-12 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -108,7 +108,7 @@ const Page1 = () => {
 
         </div>
       </motion.div>
-      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-20">
+      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-20 bg-white">
 
       {/* LEFT IMAGE */}
       <motion.div
@@ -130,7 +130,7 @@ const Page1 = () => {
         className="border border-gray-400 
                    border-b-4 border-b-black 
                    border-l-4 border-l-black
-                   p-6 md:p-10 rounded-sm max-w-xl bg-white"
+                   p-6 md:p-10 rounded-sm max-w-xl bg-white "
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -146,7 +146,7 @@ const Page1 = () => {
       </motion.div>
 
     </section>
-     <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-20">
+     <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-20 bg-white">
       <motion.div
         className="border border-gray-400 
                    border-b-4 border-b-black 
@@ -169,7 +169,7 @@ const Page1 = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true }}
-        className="w-full md:w-[450px] h-[370px]"   // ← Added fixed height
+        className="w-full md:w-[450px] h-[370px] bg-white"   // ← Added fixed height
       >
         <img
           src="/pr1.png"
@@ -180,13 +180,13 @@ const Page1 = () => {
 
     </section>
     {/* Stats Grid */}
-    <div className="max-w-7xl mx-auto px-6 py-[200px]">
+    <div className="max-w-8xl mx-auto px-10 py-[200px] bg-white">
            <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 bg-white"
           >
                <motion.img 
                variants={boxVariants}
@@ -230,13 +230,13 @@ const Page1 = () => {
         <div className="group relative inline-block cursor-pointer">
           <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
 
-          <button className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+          <button className="relative z-10 font-bold bg-white border text-black border-black px-4 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
             View Projects
           </button>
         </div>
       </div>
           </div>
-          <Footer/>
+         
           
     </>
   );
