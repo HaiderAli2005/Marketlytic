@@ -2,7 +2,7 @@
 import { motion, useScroll, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-const PrivacyMain = () => {
+const TermMain = () => {
   const { scrollY } = useScroll();
 
   const rotateVal = useMotionValue(0);
@@ -258,4 +258,4 @@ const PrivacyMain = () => {
   );
 };
 
-export default PrivacyMain;
+export default TermMain;

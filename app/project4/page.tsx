@@ -118,7 +118,7 @@ const Page1 = () => {
           </p>
         </div>
       </motion.div>
-      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-20 bg-white">
+      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-60 bg-white">
         {/* LEFT IMAGE */}
         <motion.div
           className="w-full md:w-[450px] h-[400px] md:h-[400px]" // Added height
@@ -159,7 +159,7 @@ const Page1 = () => {
           </p>
         </motion.div>
       </section>
-      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-20 bg-white">
+      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-60 bg-white">
         <motion.div
           className="border border-gray-400 
                    border-b-4 border-b-black 

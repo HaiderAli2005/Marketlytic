@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function LaunchSection() {
   return (
-    <section className="w-full h-200 bg-white flex flex-col md:flex-row items-center justify-between gap-10 py-20 px-6 md:px-60">
+    <section className="w-full h-200 bg-white flex flex-col md:flex-row items-center justify-between gap-10 py-2 px-6 md:px-60">
 
       {/* LEFT IMAGE */}
       <motion.div

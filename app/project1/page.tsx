@@ -40,13 +40,13 @@ const Page1 = () => {
           <div className="absolute bottom-0 left-0 right-0 h-100 bg-linear-to-b from-transparent to-white"></div>
         </div>
 
-        <div className="relative container mx-auto px-6 md:px-12 pt-40 pb-25">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 min-h-[250px]">
+        <div className="relative container mx-auto px-6 md:px-12 pt-40 pb-25 bg-white">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 min-h-[250px] bg-white">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex-1 space-y-6"
+              className="flex-1 space-y-6 bg-white"
             >
               <span className="text-black/50 text-lg font-medium mt-2">
                 + Project
@@ -89,8 +89,8 @@ const Page1 = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="mx-auto px-6 md:px-12 py-12 bg-white"
       >
-        <div className="container mx-auto px-6 md:px-12 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="container mx-auto px-6 md:px-12 py-16 bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 bg-white">
             <div
               className="h-64 md:h-[550px]  overflow-hidden  col-span-3 border-l-[3px] border-l-black
         border-b-[3px] border-b-black
@@ -100,7 +100,7 @@ const Page1 = () => {
               <img
                 src="/project1.png"
                 alt="Brand color swatches and design materials"
-                className="w-550 h-180 object-cover"
+                className="w-550 h-180 object-cover bg-white"
               />
             </div>
           </div>
@@ -108,18 +108,17 @@ const Page1 = () => {
 
         </div>
       </motion.div>
-      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-20 bg-white">
+      <section className="w-full flex flex-col md:flex-row items-center justify-between gap-10 py-16 px-6 md:px-60 bg-white">
 
-      {/* LEFT IMAGE */}
       <motion.div
-        className="w-full md:w-[450px] h-[400px] md:h-[400px]" // Added height
+        className="w-full md:w-[450px] h-[400px] md:h-[400px] bg-white" 
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <img
-          src="/aboutImages/launch.jpeg" // change to your image path
+          src="/aboutImages/launch.jpeg"
           alt="Our Launch"
           className="w-full h-full object-cover border border-gray-400"
         />
@@ -146,7 +145,7 @@ const Page1 = () => {
       </motion.div>
 
     </section>
-     <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-20 bg-white">
+     <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-60 bg-white">
       <motion.div
         className="border border-gray-400 
                    border-b-4 border-b-black 
@@ -169,7 +168,7 @@ const Page1 = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true }}
-        className="w-full md:w-[450px] h-[370px] bg-white"   // ← Added fixed height
+        className="w-full md:w-[450px] h-[370px] bg-white"  
       >
         <img
           src="/pr1.png"

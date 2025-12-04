@@ -9,6 +9,45 @@ export default function ProjectsShowcase() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);
 
+  // Utility to lock/unlock scroll ONLY for this page
+  const lockScroll = () => (document.documentElement.style.overflow = "hidden");
+  const unlockScroll = () => (document.documentElement.style.overflow = "auto");
+
+  // 🔥 Enable scroll lock only when ProjectsShowcase becomes visible
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    const onScroll = () => {
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+
+      const fullyVisible = rect.top <= 0 && rect.bottom >= vh;
+
+      if (fullyVisible) {
+        lockScroll();   // 🔒 LOCK scroll only inside this section
+      } else {
+        unlockScroll(); // 🔓 UNLOCK when leaving section
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      unlockScroll();
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  // 🔓 Unlock body scroll when slider finishes scrolling
+  const unlockScrollIfFinished = () => {
+    const slider = sliderRef.current!;
+    const atBottom =
+      Math.ceil(slider.scrollTop + slider.clientHeight) >= slider.scrollHeight;
+
+    if (atBottom) unlockScroll(); // enable scrolling after finishing slider
+  };
+
   useEffect(() => {
     const section = sectionRef.current!;
     const slider = sliderRef.current!;
@@ -22,36 +61,40 @@ export default function ProjectsShowcase() {
 
       const fullyVisible = rect.top <= 0 && rect.bottom >= vh;
 
-      // 🔹 Not fully visible → do nothing
+      // Not in section → do nothing
       if (!fullyVisible) {
         leftPanel.style.position = "relative";
         return;
       }
 
-      // 🔹 Fix the LEFT PANEL
+      // Fix left panel
       leftPanel.style.position = "fixed";
       leftPanel.style.top = "80px";
       leftPanel.style.left = rect.left + "px";
       leftPanel.style.width = rect.width / 2 + "px";
       leftPanel.style.zIndex = "20";
 
-      // 🔹 Scroll only the slider (RIGHT PANEL)
+      // Scroll only the slider
       const delta = e.deltaY;
       const atTop = slider.scrollTop <= 0;
       const atBottom =
-        Math.ceil(slider.scrollTop + slider.clientHeight) >=
-        slider.scrollHeight;
+        Math.ceil(slider.scrollTop + slider.clientHeight) >= slider.scrollHeight;
 
-      // 🔹 If slider can scroll → freeze page & scroll only slider
+      // Freeze page scroll until slider finished
       if (!(atTop && delta < 0) && !(atBottom && delta > 0)) {
         e.preventDefault();
         slider.scrollTop += delta;
+        unlockScrollIfFinished();
       }
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });
-    return () => window.removeEventListener("wheel", onWheel);
+    return () => {
+      unlockScroll();
+      window.removeEventListener("wheel", onWheel);
+    };
   }, []);
+
 
   return (
     <section ref={sectionRef} className="w-full min-h-screen pt-0 mt-0 bg-gray-100 ">
