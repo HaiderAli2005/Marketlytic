@@ -1,8 +1,15 @@
-import TermMain from "../component/termandcondition/main"
+
+import Header from "../component/header"
+import TermsMain from "../component/terms/main"
+
 
 const terms = ()=>{
     return(
-       <TermMain/> 
+        <>
+        <Header/>
+      <TermsMain/>
+      </>
     )
 
 }
+export default terms
