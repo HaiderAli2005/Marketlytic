@@ -1,8 +1,8 @@
 "use client";
 import { motion, useScroll, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Header from "../component/header";
-import Footer from "../component/fotter";
+import Header from "../component/navbar/header";
+import Footer from "../component/footer/fotter";
 import Link from "next/link";
 const boxVariants = {
   hidden: { opacity: 0, y: 50 },

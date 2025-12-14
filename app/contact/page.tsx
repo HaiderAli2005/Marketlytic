@@ -2,9 +2,9 @@
 
 import InquirySection from "../component/contact/form";
 import ContactPage from "../component/contact/main"
-import Header from "../component/header";
+import Header from "../component/navbar/header";
 import MapPage from "../component/contact/map";
-import Footer from "../component/fotter";
+import Footer from "../component/footer/fotter";
 
 const contact=()=>{
   return(

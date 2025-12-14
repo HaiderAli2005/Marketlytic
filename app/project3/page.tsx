@@ -1,8 +1,8 @@
 "use client";
 import { motion, useScroll, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Header from "../component/header";
-import Footer from "../component/fotter";
+import Header from "../component/navbar/header";
+import Footer from "../component/footer/fotter";
 import Link from "next/link";
 const boxVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -74,13 +74,28 @@ const Page1 = () => {
               </motion.p>
             </motion.div>
 
-            <div className="group relative inline-block cursor-pointer mt-60 ">
-              <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
+            <div className="
+  group relative inline-block cursor-pointer
+  mt-10 sm:mt-20 md:mt-40 lg:mt-60
+">
+  <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
 
-              <button className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                Visit Website
-              </button>
-            </div>
+  <button className="
+    relative z-10
+    font-bold
+    bg-white
+    border border-black
+    text-black
+    px-4 py-3
+    transition-all duration-300
+    group-hover:translate-x-1
+    group-hover:-translate-y-1
+    whitespace-nowrap
+  ">
+    Visit Website
+  </button>
+</div>
+
           </div>
         </div>
       </div>
@@ -248,18 +263,47 @@ const Page1 = () => {
           experience. The ultimate goal is to create safer, more
           energy-efficient homes.
         </p>
-        <div className="border-l-4 border-b-4 border-t border-r border-black p-8 flex items-center justify-between bg-dots mt-30">
-          <h3 className="text-4xl font-semibold text-black/70">
-            Read more exciting research
-          </h3>
+        <div
+  className="
+    border-l-4 border-b-4 border-t border-r border-black
+    bg-dots
+    p-6 sm:p-8
+    flex flex-row flex-wrap
+    items-center
+    justify-between
+    gap-6
+    mt-10 sm:mt-20 md:mt-30
+  "
+>
+  <h3 className="
+    text-2xl sm:text-3xl md:text-4xl
+    font-semibold
+    text-black/70
+    max-w-full
+  ">
+    Read more exciting research
+  </h3>
 
-          <div className="group relative inline-block cursor-pointer">
-            <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
+  <div className="group relative inline-block cursor-pointer shrink-0">
+    <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
 
-            <button className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-              View Projects
-            </button>
-          </div>
+    <button className="
+      relative z-10
+      font-bold
+      bg-white
+      border border-black
+      text-black
+      px-4 py-3
+      transition-all duration-300
+      group-hover:translate-x-1
+      group-hover:-translate-y-1
+      whitespace-nowrap
+    ">
+      View Projects
+    </button>
+  </div>
+
+
         </div>
       </div>
       

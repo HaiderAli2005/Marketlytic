@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function FoundedSection() {
   return (
-    <section className="w-full bg-white flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-6 md:px-60 ">
+    <section className="w-full h-100 bg-white flex flex-col md:flex-row items-center justify-between gap-4 py-2 px-6 md:px-60 ">
       
    <motion.div
         className="border border-gray-400 

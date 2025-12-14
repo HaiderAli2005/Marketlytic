@@ -2,15 +2,15 @@
 
 import { Press_Start_2P } from "next/font/google";
 
-import MenuDrawer from "./component/menu";
+import MenuDrawer from "./component/mainpage/menu";
 import HeroVideo from "./component/herovideo";
-import TrusteesSection from "./component/trustess";
-import ExpertiseSection from "./component/experties";
-import ProjectsShowcase from "./component/projectShowcase";
-import TestimonialsSection from "./component/TestimonialsSection";
-import PricingSection from "./component/pricingsection";
-import FAQSection from "./component/helpdesk";
-
+import TrusteesSection from "./component/trustees/trustess";
+import FeatureSection from "./component/features/experties";
+import ProjectsShowcase from "./component/project/projectShowcase";
+import TestimonialsSection from "./component/testimonials/TestimonialsSection";
+import PricingSection from "./component/pricingSection/pricingsection";
+import FaqsSection from "./component/faq/faqSection";
+import HeroPage from "./component/mainpage/menu";
 
 const pixelFont = Press_Start_2P({
   subsets: ["latin"],
@@ -20,14 +20,17 @@ const pixelFont = Press_Start_2P({
 export default function Home() {
   return (
     <main className="bg-white  min-h-screen">
-      <MenuDrawer />
+
+     <HeroPage/>
       <HeroVideo />
-      <ExpertiseSection />
+      <FeatureSection/>
       <ProjectsShowcase />
       <TestimonialsSection />
       <TrusteesSection />
       <PricingSection />
-      <FAQSection />
+      <FaqsSection />
+    
+     
     
     </main>
   );

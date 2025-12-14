@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/component/faq/faq.jsx", "app/component/faq/faqSection.jsx", "app/component/features/experties.jsx", "app/component/project/projectShowcase.jsx", "app/component/navbar/header.jsx", "app/component/mainpage/menu.jsx", "app/component/aboutsection/EnterpriseSection.jsx", "app/about/page.jsx", "app/component/team/team.jsx", "app/component/team/OurApproach.jsx", "app/component/team/ACHIEVEMENTS.jsx", "app/component/work/main.jsx", "app/component/work/workcard.jsx", "app/work/page.jsx", "app/component/trustees/trustess.jsx", "app/component/contact/form.jsx", "app/component/contact/main.tsx", "app/component/services/Exceptional_Identity.jsx", "app/component/testimonials/TestimonialsSection.jsx", "app/component/pricingSection/pricingsection.jsx", "app/project1/page.jsx"  ],
   "exclude": ["node_modules"]
 }

@@ -1,8 +1,8 @@
 "use client";
 import { motion, useScroll, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Header from "../component/header";
-import Footer from "../component/fotter";
+import Header from "../component/navbar/header";
+import Footer from "../component/footer/fotter";
 import Link from "next/link";
 const boxVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -75,13 +75,28 @@ const Page1 = () => {
               </motion.p>
             </motion.div>
 
-            <div className="group relative inline-block cursor-pointer mt-60 ">
-              <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
+            <div className="
+  group relative inline-block cursor-pointer
+  mt-10 sm:mt-20 md:mt-40 lg:mt-60
+">
+  <div className="absolute inset-1 -translate-x-1 translate-y-1 bg-black transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2"></div>
 
-              <button className="relative z-10 font-bold bg-white border text-black border-black px-3 py-3 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                Visit Website
-              </button>
-            </div>
+  <button className="
+    relative z-10
+    font-bold
+    bg-white
+    border border-black
+    text-black
+    px-4 py-3
+    transition-all duration-300
+    group-hover:translate-x-1
+    group-hover:-translate-y-1
+    whitespace-nowrap
+  ">
+    Visit Website
+  </button>
+</div>
+
           </div>
         </div>
       </div>

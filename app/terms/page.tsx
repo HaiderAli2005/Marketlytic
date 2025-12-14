@@ -1,5 +1,5 @@
 
-import Header from "../component/header"
+import Header from "../component/navbar/header"
 import TermsMain from "../component/terms/main"
 
 

@@ -1,0 +1,143 @@
+.admin {
+  padding: 3rem;
+  height: 100vh;
+}
+
+.admin h1 {
+  text-align: center;
+  font-size: 42px;
+}
+
+.tabs-container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  height: 100%;
+}
+
+.sidebar {
+  width: max-content;
+  display: block;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  padding: 10px 0px;
+  /* border-radius: 8px; */
+  margin-bottom: 5px;
+  width: 130px;
+  font-size: 16px;
+  background-color: transparent;
+  color: black;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.data-box {
+  width: -webkit-fill-available;
+  margin-left: 2rem;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+}
+
+.button {
+  width: 100px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 5px 0;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.active {
+  color: rgb(66 89 79) !important;
+}
+.blog-content h1 {
+  font-size: 28px; /* equivalent to Tailwind's text-3xl */
+  font-weight: 700;
+}
+
+.blog-content h2 > span {
+  font-size: 24px; /* equivalent to text-2xl */
+  font-weight: 600;
+  line-height: 30px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.blog-content h3 {
+  font-size: 28px !important; /* equivalent to text-xl */
+  font-weight: 600;
+}
+.blog-content h2 {
+  font-size: 27px; /* equivalent to text-2xl */
+  font-weight: 600;
+  line-height: 30px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+.blog-content h3 > span {
+  font-size: 24px !important; /* equivalent to text-xl */
+  font-weight: 700;
+}
+
+.blog-content h4 {
+  font-size: 18px; /* equivalent to text-lg */
+  font-weight: 700;
+}
+
+.blog-content h5 {
+  font-size: 16px; /* equivalent to text-[16px] md:text-[20px] */
+  font-weight: 700;
+}
+
+.blog-content h6 {
+  font-size: 14px; /* equivalent to text-sm */
+  font-weight: 500;
+}
+
+.blog-content p {
+  font-size: 16px; /* text-[16px] md:text-[20px] */
+  line-height: 28px; /* leading-relaxed */
+}
+.blog-content span {
+  font-size: 16px; /* text-[16px] md:text-[20px] */
+  line-height: 28px; /* leading-relaxed */
+}
+
+/* editor.css */
+.ProseMirror {
+  outline: none;
+  min-height: 150px;
+}
+.editor-container {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 150px;
+  outline: none;
+}
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.blog-content p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

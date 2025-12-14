@@ -1,13 +1,17 @@
 "use client";
-
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useState } from "react";
+
+const defaultMap = {
+  label: "✢ Location",
+  title: "Our Prime Presence",
+  description:
+    "At the heart of creativity, where innovation meets design.",
+  iframeSrc: "",
+};
 
 export default function MapPage() {
-  const mapFrame = useRef<HTMLIFrameElement>(null);
-  const mapWrap = useRef<HTMLDivElement>(null);
-
-  const fadeUp = {
+   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     show: (delay = 0) => ({
       opacity: 1,
@@ -18,63 +22,98 @@ export default function MapPage() {
         ease: [0.16, 1, 0.3, 1]as any,
       },
     }),
-  };
+  }
+  const [data, setData] = useState(defaultMap);
+ 
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_IP}/admin/map`, {
+      cache: "no-store",
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        if (json?.success?.mapSection) {
+          setData({
+            label: json.success.mapSection.label || defaultMap.label,
+            title: json.success.mapSection.title || defaultMap.title,
+            description:
+              json.success.mapSection.description ||
+              defaultMap.description,
+            iframeSrc: json.success.mapSection.iframeSrc || "",
+          });
+        }
+      })
+      .catch(() => {
+        // silent fallback
+      });
+  }, []);
 
   return (
-    <div className="bg-white">
+  <div className="bg-white">
 
-      {/* TEXT SECTION */}
-      <div className="container mx-auto px-6 md:px-12 pt-10 pb-20">
-
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          custom={0}
-          className="space-y-6"
-        >
-          <span className="text-black/50 text-lg font-medium mt-5">✢ Location</span>
-
-          <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0.2}
-            className="text-black/80 text-5xl md:text-7xl font-bold leading-tight"
-          >
-            Our Prime Presence
-          </motion.h1>
-
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0.4}
-            className="text-black/50 text-xl"
-          >
-            At the heart of creativity, where innovation meets design.
-          </motion.p>
-        </motion.div>
-      </div>
+    {/* TEXT SECTION */}
+    <div className="container mx-auto px-6 md:px-12 pt-10 pb-20">
       <motion.div
         variants={fadeUp}
         initial="hidden"
         animate="show"
-        custom={2}   
-        className="relative w-380 h-[900px] overflow-hidden"
+        custom={0}
+        className="space-y-6"
       >
-        {/* Top white fade */}
-        <div className="absolute top-0 left-0 w-full h-[120px] bg-linear-to-b from-white/60 to-transparent z-20 pointer-events-none"></div>
+        <span className="text-black/50 text-lg font-medium mt-5">
+          {data.label}
+        </span>
 
-        {/* MAP */}
-        <iframe
-          ref={mapFrame}
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.651!2d4.895168!3d52.370216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609d8de27b6f5%3A0x82d5e8b42b55!2sAmsterdam!5e0!3m2!1sen!2snl!4v1698653018653!5m2!1sen!2snl"
-          className="absolute inset-0 px-10 w-380 h-180 "
-          style={{ border: "6" }}
-          loading="lazy"
-        ></iframe>
+        <motion.h1
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          custom={0.2}
+          className="text-black/80 text-4xl sm:text-5xl md:text-7xl font-bold leading-tight"
+        >
+          {data.title}
+        </motion.h1>
+
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          custom={0.4}
+          className="text-black/50 text-lg sm:text-xl max-w-3xl"
+        >
+          {data.description}
+        </motion.p>
       </motion.div>
     </div>
-  );
+
+    {/* MAP SECTION */}
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      animate="show"
+      custom={0.6}
+      className="
+        relative
+        w-full 
+        h-[320px] sm:h-[420px] md:h-[600px] lg:h-[900px]
+        overflow-hidden
+      "
+    >
+      {/* Top white fade */}
+      <div className="absolute top-0 left-0 w-full h-[120px] bg-linear-to-b from-white/60 to-transparent z-20 pointer-events-none" />
+
+      {data.iframeSrc && (
+        <div className="absolute mb-18 inset-0 px-4 sm:px-6 md:px-10">
+          <iframe
+            src={data.iframeSrc}
+            className="w-full h-full border-none  "
+            loading="lazy"
+          />
+        </div>
+      )}
+    </motion.div>
+
+  </div>
+);
+
 }

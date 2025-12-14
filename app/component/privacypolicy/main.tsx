@@ -67,9 +67,24 @@ const PrivacyMain = () => {
             <motion.img
               src="/services/star.png"
               alt="Star decoration"
-              className="w-[250px] ml-[50px] shrink-0"
-              style={{ rotate: smoothRotate }}
-            />
+                 className="
+      absolute right-1 top-35       /* 📱 mobile: anchored to text block */
+      w-[70px]
+
+      sm:static sm:w-[180px]
+      md:w-[220px]
+      lg:w-[250px]
+
+      sm:ml-4
+      md:ml-8
+      lg:ml-[50px]
+
+      shrink-0
+      pointer-events-none
+    "
+    style={{ rotate: smoothRotate }}
+  />
+            
           </div>
         </div>
       </div>
