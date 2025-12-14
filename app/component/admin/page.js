@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import NewsManager from "./NewsManager";
+
 const Admin = () => {
   const [activeTab, setActiveTab] = useState("news");
 
@@ -203,9 +203,7 @@ const Admin = () => {
               </ul>
             </nav>
           </div>
-          <div className="flex-1">
-            {activeTab === "news" && <NewsManager />}
-          </div>
+          
         </div>
       </div>
     </div>
